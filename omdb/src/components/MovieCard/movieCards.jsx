@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom"
+
 const MovieCards = ({Title,Year,Type,imdbID,Poster}) => {
+
+    const navigate = useNavigate()
+    const handleNavigate = () => {
+        navigate(`movie/${imdbID}`)
+    }
     return (
-        <div className="movie-card">
+        <div onClick={(handleNavigate)} className="movie-card">
             <div className="poster-container">
             <img src={Poster} alt={Title}/>
             </div>
